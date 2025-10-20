@@ -8,7 +8,7 @@
  ******************************************************************************************* */
 
 /**
- * Returns an area of a rectangle given by width and height.
+ *1. Returns an area of a rectangle given by width and height.
  *
  * @param {number} width
  * @param {number} height
@@ -25,7 +25,7 @@ function getRectangleArea(width, height) {
   return width * height;
 }
 /**
- * Returns a circumference of circle given by radius.
+ *2. Returns a circumference of circle given by radius.
  *
  * @param {number} radius
  * @return {number}
@@ -46,7 +46,7 @@ function getCircleCircumference(radius) {
 }
 
 /**
- * Returns an average of two given numbers.
+ *3. Returns an average of two given numbers.
  *
  * @param {number} value1
  * @param {number} value2
@@ -68,7 +68,7 @@ function getAverage(value1, value2) {
 }
 
 /**
- * Returns a distance between two points by cartesian coordinates.
+ *4. Returns a distance between two points by cartesian coordinates.
  *
  * @param {number} x1
  * @param {number} y1
@@ -81,12 +81,19 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  if (
+    typeof x1 !== 'number' &&
+    typeof y1 !== 'number' &&
+    typeof x2 !== 'number' &&
+    typeof y2 !== 'number'
+  ) {
+    throw new Error('Not implemented');
+  }
+  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 }
-
 /**
- * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
+ *5. Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
  *
  * @param {number} a
  * @param {number} b
