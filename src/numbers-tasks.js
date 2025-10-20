@@ -36,7 +36,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCircleCircumference(radius) {
-  if (!Number.isFinite(radius)) {
+  if (typeof radius !== 'number') {
     throw new Error('Not implemented');
   }
   if (radius < 0) {
@@ -57,8 +57,14 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  if (typeof value1 !== 'number' && typeof value2 !== 'number') {
+    throw new Error('Not implemented');
+  }
+  if (typeof ((value1 + value2) / 2) !== 'number') {
+    throw new Error('Not implemented');
+  }
+  return value1 / 2 + value2 / 2;
 }
 
 /**
