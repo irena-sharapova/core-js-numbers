@@ -104,12 +104,15 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  if (typeof a !== 'number' && typeof b !== 'number') {
+    throw new Error('Not implemented');
+  }
+  return -b / a;
 }
 
 /**
- * Returns an angle (in radians) between two vectors given by xi and yi,
+ *6. Returns an angle (in radians) between two vectors given by xi and yi,
  * coordinates in Cartesian plane.
  * See details https://en.wikipedia.org/wiki/Euclidean_vector#Representations
  *
@@ -130,7 +133,7 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
 }
 
 /**
- * Returns a last digit of a integer number.
+ *7. Returns a last digit of a integer number.
  * The input parameter will always be greater than or equal to zero and will be in decimal notation.
  *
  * @param {number} value
@@ -147,7 +150,7 @@ function getLastDigit(/* value */) {
 }
 
 /**
- * Returns a number by given string representation.
+ *8. Returns a number by given string representation.
  *
  * @param {string} value
  * @return {number}
@@ -162,7 +165,7 @@ function parseNumberFromString(/* value */) {
 }
 
 /**
- * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
+ *9. Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
  *
  * @param {number} a
  * @param {number} b
@@ -179,7 +182,7 @@ function getParallelepipedDiagonal(/* a, b, c */) {
 }
 
 /**
- * Returns the number rounded to specified power of 10.
+ *10. Returns the number rounded to specified power of 10.
  *
  * @param {number} num
  * @param {number} pow
