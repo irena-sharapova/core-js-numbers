@@ -130,19 +130,19 @@ function getLinearEquationRoot(a, b) {
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
   if (
-    typeof x1 !== 'number' &&
-    typeof y1 !== 'number' &&
-    typeof x2 !== 'number' &&
+    typeof x1 !== 'number' ||
+    typeof y1 !== 'number' ||
+    typeof x2 !== 'number' ||
     typeof y2 !== 'number'
-  )
+  ) {
     throw new Error('Not implemented');
-  {
-    const dotProduct = x1 * x2 + y1 * y2;
-    const magnitude1 = Math.sqrt(x1 ** 2 + y1 ** 2);
-    const magnitude2 = Math.sqrt(x2 ** 2 + y2 ** 2);
-    const cosineAngle = dotProduct / (magnitude1 * magnitude2);
   }
-  return Math.acos(cosineAngle);
+  const angle1 = Math.atan2(y1, x1);
+  const angle2 = Math.atan2(y2, x2);
+  let diff = Math.abs(angle1 - angle2);
+  if (diff > Math.PI) diff = 2 * Math.PI - diff;
+
+  return diff;
 }
 
 /**
@@ -162,9 +162,7 @@ function getLastDigit(value) {
   if (typeof value !== 'number') {
     throw new Error('Not implemented');
   }
-  const valueStr = value.toString();
-  const lastChar = valueStr.slice(-1);
-  return Number(lastChar);
+  return value % 10;
 }
 
 /**
@@ -178,8 +176,15 @@ function getLastDigit(value) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  if (typeof value !== 'string') {
+    throw new Error('Not implemented');
+  }
+  const numberValue = Number(value);
+  if (numberValue !== 'number') {
+    throw new Error('Not implemented');
+  }
+  return numberValue;
 }
 
 /**
