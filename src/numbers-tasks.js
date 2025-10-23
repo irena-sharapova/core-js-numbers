@@ -134,17 +134,17 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
     typeof y1 !== 'number' &&
     typeof x2 !== 'number' &&
     typeof y2 !== 'number'
-    
   )
-  throw new Error('Not implemented'); {
+    throw new Error('Not implemented');
+  {
     const dotProduct = x1 * x2 + y1 * y2;
     const magnitude1 = Math.sqrt(x1 ** 2 + y1 ** 2);
     const magnitude2 = Math.sqrt(x2 ** 2 + y2 ** 2);
     const cosineAngle = dotProduct / (magnitude1 * magnitude2);
   }
-return Math.acos(cosineAngle);  
-  }
-  
+  return Math.acos(cosineAngle);
+}
+
 /**
  *7. Returns a last digit of a integer number.
  * The input parameter will always be greater than or equal to zero and will be in decimal notation.
@@ -160,10 +160,11 @@ return Math.acos(cosineAngle);
  */
 function getLastDigit(value) {
   if (typeof value !== 'number') {
-    if 
     throw new Error('Not implemented');
   }
-
+  const valueStr = value.toString();
+  const lastChar = valueStr.slice(-1);
+  return Number(lastChar);
 }
 
 /**
