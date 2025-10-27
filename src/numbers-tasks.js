@@ -369,8 +369,13 @@ function getSumToN(n) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  if (typeof num !== 'number') {
+    throw new Error('Not implemented');
+  }
+  return String(num)
+    .split('')
+    .reduce((acc, curr) => acc + Number(curr), 0);
 }
 
 /**
@@ -384,8 +389,14 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  if (typeof num !== 'number') {
+    throw new Error('Not implemented');
+  }
+  if (num <= 0) {
+    return false;
+  }
+  return Math.log2(num) % 1 === 0;
 }
 
 /**
@@ -398,8 +409,11 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(num) {
+  if (typeof num !== 'number') {
+    throw new Error('Not implemented');
+  }
+  return Math.sin(num);
 }
 
 /**
@@ -413,8 +427,11 @@ function getSine(/* num */) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
+function numberToStringInBase(number, base) {
+  if (typeof number !== 'number' && typeof base !== 'number') {
+    throw new Error('Not implemented');
+  }
+  return number.toString(base);
 }
 
 /**
@@ -427,8 +444,11 @@ function numberToStringInBase(/* number, base */) {
  * @example:
  * 12345, 2    => '1.23e+4'
  */
-function toExponential(/* number, fractionDigits */) {
-  throw new Error('Not implemented');
+function toExponential(number, fractionDigits) {
+  if (typeof number !== 'number' && typeof fractionDigits !== 'number') {
+    throw new Error('Not implemented');
+  }
+  return number.toExponential(fractionDigits);
 }
 
 /**
@@ -442,8 +462,11 @@ function toExponential(/* number, fractionDigits */) {
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-function toFixed(/* number, fractionDigits */) {
-  throw new Error('Not implemented');
+function toFixed(number, fractionDigits) {
+  if (typeof number !== 'number' && typeof fractionDigits !== 'number') {
+    throw new Error('Not implemented');
+  }
+  return number.toFixed(fractionDigits);
 }
 
 /**
@@ -458,8 +481,11 @@ function toFixed(/* number, fractionDigits */) {
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(/* number, precision */) {
-  throw new Error('Not implemented');
+function toPrecision(number, precision) {
+  if (typeof number !== 'number' && typeof precision !== 'number') {
+    throw new Error('Not implemented');
+  }
+  return number.toPrecision(precision);
 }
 
 /**
