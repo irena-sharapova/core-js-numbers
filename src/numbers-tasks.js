@@ -181,9 +181,6 @@ function parseNumberFromString(value) {
     throw new Error('Not implemented');
   }
   const numberValue = Number(value);
-  if (numberValue !== 'number') {
-    throw new Error('Not implemented');
-  }
   return numberValue;
 }
 
